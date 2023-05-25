@@ -1,0 +1,48 @@
+@import '../App.scss';
+
+.chatList {
+    width: 45%;
+    font-size: 20px;
+    color: $icons;
+    position: relative;
+
+    .itemChat {
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        border-top: 1px solid $header_background;
+        cursor: pointer;
+
+        .avatar {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: $avatarBackground;
+            border-radius: 1px solid $avatarBackground;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: 50% 7px;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+
+        .name {
+            font-size: 18px;
+
+            .span {
+                font-size: 13px;
+            }
+        }
+    }
+
+    .active {
+        background-color: $header_background;
+    }
+
+    .greating {
+        padding: 20px;
+        font-size: 15px;
+        position: absolute;
+        bottom: 0;
+    }
+}

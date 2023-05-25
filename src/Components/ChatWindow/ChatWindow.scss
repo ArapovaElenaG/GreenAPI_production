@@ -1,0 +1,14 @@
+@import '../App.scss';
+
+.chatWindow {
+    width: 55%;
+    min-height: 100vh;
+
+    .wrapperChat {
+        display: none;
+    }
+
+    .activeChat {
+        display: block;
+    }
+}
