@@ -2,6 +2,8 @@ import React from 'react';
 import './Header.scss';
 import iconMessage from './images/chat-left-text-fill.svg';
 
+
+
 function Header({phoneNum, avatar}) {
     return (
         <header className={`header ${phoneNum ? 'headerWindow' : ''}`}>

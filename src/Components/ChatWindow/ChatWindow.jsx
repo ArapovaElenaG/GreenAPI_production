@@ -6,7 +6,7 @@ import MessageEnter from './MessageEnter/MessageEnter';
 import {useSelector} from 'react-redux';
 
 
-function ChatWindow({phoneNum}) {
+function ChatWindow({idInstance, apiTokenInstance}) {
     const chats = useSelector(state => state.chats);
 
     return (
@@ -19,7 +19,11 @@ function ChatWindow({phoneNum}) {
                             avatar={item.avatar}
                         />
                         <MessageFeed phoneNum={item.phoneNum}/>
-                        <MessageEnter phoneNum={item.phoneNum}/>
+                        <MessageEnter 
+                            phoneNum={item.phoneNum}
+                            idInstance={idInstance} 
+                            apiTokenInstance={apiTokenInstance}
+                        />
                     </div>
                 )
             })}

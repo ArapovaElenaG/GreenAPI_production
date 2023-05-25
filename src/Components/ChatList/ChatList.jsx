@@ -5,12 +5,15 @@ import SearchChat from './SearchChat/SearchChat';
 import {useDispatch, useSelector} from 'react-redux';
 import {makeActiveChat, addMessageToFeed} from '../../Store/actions';
 import axios from 'axios';
+import sharedAvatar from '../images/person-fill.svg';
 
 
 function ChatList() {
     const [beginedTrackingIncoming, setBeginedTrackingIncoming] = React.useState(false);
     const [idIncoming, setIdIncoming] = React.useState('');
 
+    const idInstance = useSelector(state => state.idInstance);
+    const apiTokenInstance = useSelector(state => state.apiTokenInstance);
     const chats = useSelector(state => state.chats);
 
     const dispatch = useDispatch();
@@ -21,9 +24,12 @@ function ChatList() {
 
 
     const getNotification = () => {
-        axios
-            // .get('https://api.green-api.com/waInstance1101821599/ReceiveNotification/b99e7dc1b2a34a49b8923049dc49c930cd2485bb5fc640c7ad')
-            .get('https://api.green-api.com/waInstance1101824540/ReceiveNotification/69ed8401b93c4e45979f7f9b79bb097ed432ab91d43145f4a2')
+        const instance = axios.create({
+            baseURL: 'https://api.green-api.com',
+        });
+
+        instance
+            .get(`/waInstance${idInstance}/ReceiveNotification/${apiTokenInstance}`)
             .then(result => {
                 if (result.data) {
                     setIdIncoming(result.data.body.idMessage);
@@ -36,11 +42,10 @@ function ChatList() {
                             id: result.data.body.idMessage
                         })) 
                     }
-                    axios
-                        // .delete(`https://api.green-api.com/waInstance1101821599/DeleteNotification/b99e7dc1b2a34a49b8923049dc49c930cd2485bb5fc640c7ad/${result.data.receiptId}`)
-                        .delete(`https://api.green-api.com/waInstance1101824540/DeleteNotification/69ed8401b93c4e45979f7f9b79bb097ed432ab91d43145f4a2/${result.data.receiptId}`)
+                    instance
+                        .delete(`/waInstance${idInstance}/DeleteNotification/${apiTokenInstance}/${result.data.receiptId}`)
                         .then(result => {
-                                // console.log('Результат запроса на удаление', result);
+                            // console.log('Результат запроса на удаление', result);
                         })
                         .catch(error => {
                             // console.log('ошибка удаления', error);
@@ -52,17 +57,16 @@ function ChatList() {
             });
     }
 
-    
-    let timerId = null;
+
     if (!beginedTrackingIncoming) {
         setBeginedTrackingIncoming(true);
-        timerId = setInterval(getNotification, 5000);
+        setInterval(getNotification, 5000);
     }
 
 
     return (
         <div className='chatList'>
-            <Header/>
+            <Header avatar={sharedAvatar}/>
             <SearchChat/>
 
 
@@ -102,6 +106,9 @@ function ChatList() {
                 Вы можете добавить еще два чата.
                 <br/>
                 Все вопросы и пожелания вы можете отправить разработчику на WhatsApp через этот сайт. Постараюсь ответить быстро!
+                <br/>
+                <br/>
+                П.С. Проект на Redux. Библиотеку Persist не устанавливала, поэтому при перезагрузке страницы все сообщения и добавленные чаты сотрутся.
                 <br/>
                 <br/>
                 С уважением, разработчик Елена Арапова.

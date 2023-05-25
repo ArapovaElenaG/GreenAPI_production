@@ -1,7 +1,7 @@
 import React from 'react';
 import './MessageEnter.scss';
 import axios from 'axios';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {addMessageToFeed} from '../../../Store/actions';
 import Input from '../../Input/Input';
 
@@ -10,15 +10,17 @@ import Input from '../../Input/Input';
 function MessageEnter({phoneNum}) {
     const dispatch = useDispatch();
 
+    const idInstance = useSelector(state => state.idInstance);
+    const apiTokenInstance = useSelector(state => state.apiTokenInstance);
+
     const sendMessage = (value) => {
         const data = {
             "chatId": `${phoneNum}@c.us`,
             "message": value
         }
-        // const url = 'https://api.green-api.com/waInstance1101821599/SendMessage/b99e7dc1b2a34a49b8923049dc49c930cd2485bb5fc640c7ad';
         
 
-        const url = 'https://api.green-api.com/waInstance1101824540/SendMessage/69ed8401b93c4e45979f7f9b79bb097ed432ab91d43145f4a2';
+        const url = `https://api.green-api.com/waInstance${idInstance}/SendMessage/${apiTokenInstance}`;
         axios
             .post(url, data)
             .then(result => {

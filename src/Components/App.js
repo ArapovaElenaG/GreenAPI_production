@@ -4,21 +4,11 @@ import ChatList from './ChatList/ChatList';
 import ChatWindow from './ChatWindow/ChatWindow';
 
 function App() {
-  // const [phoneNum, setPhoneNum] = React.useState('');
-
-  // const addPhoneNum = (num) => {
-  //   setPhoneNum(num);
-  // }
-  
 
   return (
     <div className="App">
-      <ChatList 
-      // phoneNum={phoneNum} addPhoneNum={addPhoneNum}
-      />
-      <ChatWindow 
-      // phoneNum={phoneNum}
-      />
+      <ChatList />
+      <ChatWindow/>
     </div>
   );
 }

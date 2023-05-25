@@ -4,8 +4,8 @@ import sharedAvatar from '../Components/images/person-fill.svg';
 
 
 const initialState = {
-    messageFeed: [],
-    phoneNum: '',
+    idInstance: '1101824589',
+    apiTokenInstance: 'a4e0d20905274812b0eab3466414478240ad8079140a4f5d90',
     chats: [
         {
             name: 'developer Elena Arapova',
