@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/GreenAPI_production/static/css/main.7f40b629.css",
+    "main.js": "/GreenAPI_production/static/js/main.24af2a99.js",
+    "static/js/787.e94a1ad6.chunk.js": "/GreenAPI_production/static/js/787.e94a1ad6.chunk.js",
+    "static/media/1619162304_11-phonoteka_org-p-fon-vatsap-14.jpg": "/GreenAPI_production/static/media/1619162304_11-phonoteka_org-p-fon-vatsap-14.b21fdfdf6fcfa518c424.jpg",
+    "static/media/avatar.jpg": "/GreenAPI_production/static/media/avatar.dc9a2f94bcbb7caa72fb.jpg",
+    "index.html": "/GreenAPI_production/index.html",
+    "static/media/chat-left-text-fill.svg": "/GreenAPI_production/static/media/chat-left-text-fill.2f7f9d993a55c16b7975807887a70871.svg",
+    "static/media/person-fill.svg": "/GreenAPI_production/static/media/person-fill.0f597c65f67eac8b83352295b37af1f1.svg",
+    "main.7f40b629.css.map": "/GreenAPI_production/static/css/main.7f40b629.css.map",
+    "main.24af2a99.js.map": "/GreenAPI_production/static/js/main.24af2a99.js.map",
+    "787.e94a1ad6.chunk.js.map": "/GreenAPI_production/static/js/787.e94a1ad6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f40b629.css",
+    "static/js/main.24af2a99.js"
+  ]
+}
