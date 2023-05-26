@@ -6,6 +6,9 @@
     color: $icons;
     position: relative;
 
+    display: flex;
+    flex-direction: column;
+
     .itemChat {
         padding: 10px 20px;
         display: flex;
@@ -24,6 +27,12 @@
             background-position: 50% 7px;
             overflow: hidden;
             margin-right: 20px;
+        }
+
+        .wrapperNameChat {
+            width: calc(100% - 90px);
+            display: flex;
+            justify-content: space-between;
         }
 
         .name {
@@ -46,3 +55,18 @@
         bottom: 0;
     }
 }
+
+@media screen and (max-width: 950px) {
+    .chatList {
+        width: 100%;
+        flex-direction: column-reverse;
+
+        .greating {
+            padding: 20px;
+            font-size: 15px;
+            position: relative;
+            // bottom: 0;
+        }
+    }
+
+  }

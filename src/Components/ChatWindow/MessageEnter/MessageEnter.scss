@@ -16,5 +16,18 @@
     .icon {
         margin-right: 20px;
     }
-
 }
+
+
+
+@media screen and (max-width: 950px) {
+    .messageEnter {
+        width: 100%;
+        position: static;
+        padding: 0;
+
+        .icon:first-of-type {
+            margin-left: 20px;
+        }
+    }
+  }

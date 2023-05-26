@@ -3,9 +3,10 @@ import './ChatList.scss';
 import Header from '../Header/Header';
 import SearchChat from './SearchChat/SearchChat';
 import {useDispatch, useSelector} from 'react-redux';
-import {makeActiveChat, addMessageToFeed} from '../../Store/actions';
+import {makeActiveChat, addMessageToFeed, removeChat} from '../../Store/actions';
 import axios from 'axios';
 import sharedAvatar from '../images/person-fill.svg';
+import cross from '../images/Cross.svg';
 
 
 function ChatList() {
@@ -20,6 +21,14 @@ function ChatList() {
 
     const makeActive = (num) => {
         dispatch(makeActiveChat(num))
+    }
+
+    const removeNum = (num, status) => {
+        
+        if (status === 'active') {
+            makeActive('79128819285');
+        }
+        dispatch(removeChat(num))
     }
 
 
@@ -66,30 +75,33 @@ function ChatList() {
 
     return (
         <div className='chatList'>
-            <Header avatar={sharedAvatar}/>
-            <SearchChat/>
+            <div>
+                <Header avatar={sharedAvatar}/>
+                <SearchChat/>
 
-
-            {chats.map(item => {
-                return (
-                    <div 
-                        className={`itemChat ${item.status}`} 
-                        onClick={() => makeActive(item.phoneNum)} 
-                        key={item.phoneNum}
-                    >
+                {chats.map(item => {
+                    return (
                         <div 
-                            className='avatar' 
-                            style={{'backgroundImage': `url(${item.avatar})`}} 
+                            className={`itemChat ${item.status}`} 
+                            onClick={() => makeActive(item.phoneNum)} 
+                            key={item.phoneNum}
                         >
-                        </div>
-                        <div>
-                            <div className='name'>
-                                {item.name ? item.name : item.phoneNum}
+                            <div 
+                                className='avatar' 
+                                style={{'backgroundImage': `url(${item.avatar})`}} 
+                            >
+                            </div>
+                            <div className='wrapperNameChat'>
+                                <div className='name'>
+                                    {item.name ? item.name : item.phoneNum}
+                                </div>
+                                {item.name ? '' : <img src={cross} alt="" width={10} onClick={() => removeNum(item.phoneNum, item.status)}/>}
                             </div>
                         </div>
-                    </div>
-                )
-            })}
+                    )
+                })}
+            </div>
+            
 
             <div className='greating'>
                 Привет! 
@@ -106,9 +118,6 @@ function ChatList() {
                 Вы можете добавить еще два чата.
                 <br/>
                 Все вопросы и пожелания вы можете отправить разработчику на WhatsApp через этот сайт. Постараюсь ответить быстро!
-                <br/>
-                <br/>
-                П.С. Проект на Redux. Библиотеку Persist не устанавливала, поэтому при перезагрузке страницы все сообщения и добавленные чаты сотрутся.
                 <br/>
                 <br/>
                 С уважением, разработчик Елена Арапова.

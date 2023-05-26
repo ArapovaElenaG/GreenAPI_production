@@ -4,8 +4,8 @@ import sharedAvatar from '../Components/images/person-fill.svg';
 
 
 const initialState = {
-    idInstance: '1101824589',
-    apiTokenInstance: 'a4e0d20905274812b0eab3466414478240ad8079140a4f5d90',
+    idInstance: '1101824991',
+    apiTokenInstance: '83d17e618574471891924a26c5459299436caaa1af8a43d29c',
     chats: [
         {
             name: 'developer Elena Arapova',
@@ -56,6 +56,7 @@ const reduсer = (state = initialState, action) => {
                 } else {return state}
             } else {return state}
 
+
         case ACTIONS.MAKE_ACTIVE_CHAT:
             return {
                 ...state,
@@ -67,12 +68,17 @@ const reduсer = (state = initialState, action) => {
             }
 
 
+        case ACTIONS.REMOVE_CHAT:
+            return {
+                ...state,
+                chats: [...state.chats.filter(item => item.phoneNum !== action.num)]
+            }
+
+
         default:
             return state
     }
 }
-
-
 
 
 

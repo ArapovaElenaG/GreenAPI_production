@@ -12,3 +12,10 @@
         display: block;
     }
 }
+
+
+@media screen and (max-width: 950px) {
+    .chatWindow {
+        width: 100%;
+    }
+  }

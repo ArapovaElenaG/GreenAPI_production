@@ -31,7 +31,7 @@ function Input({place, completeTask, placeholder}) {
                 className={`input ${place}`}
                 placeholder={placeholder}
             />
-            <i className="fa-solid fa-right-to-bracket" onClick={hahdleIcon}></i>
+            <i className="icon fa-solid fa-right-to-bracket" onClick={hahdleIcon}></i>
         </div>
     )
 }

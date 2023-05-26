@@ -1,34 +1,24 @@
 import reducer from './reducer';
 import { createStore } from 'redux';
+import {persistStore, persistReducer} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 
+const reducerPersistConfig = {
+    key: 'root',
+    storage,
+    whitelist: ['chats']
+}
 
+const persistedReducer = persistReducer(reducerPersistConfig, reducer)
 
-// стандартная запись без библиотек
-// // если есть в local storage стейт, то достаем его
-// const persistedState = localStorage.getItem('reduxState') 
-//                        ? JSON.parse(localStorage.getItem('reduxState'))
-//                        : {}
-
-const store = createStore(
-    reducer, 
-    // persistedState,
+let store = createStore(
+    // reducer,
+    persistedReducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
-
-
-
-// использование библиотека redux-persist для сохранения в localStorage
-// import {persistStore, persistReducer} from 'redux-persist';
-// import storage from 'redux-persist/lib/storage';
-
-
-
-
-
-
-// export const persistor = persistStore (store);
+export let persistor = persistStore(store)
 
 
 export default store;

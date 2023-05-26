@@ -9,3 +9,10 @@ $error_background: #ff9a2e;
   display: flex;
 }
 
+@media screen and (max-width: 950px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
