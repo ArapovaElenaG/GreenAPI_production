@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/GreenAPI_production/static/css/main.7f40b629.css",
-    "main.js": "/GreenAPI_production/static/js/main.53c252f6.js",
+    "main.css": "/GreenAPI_production/static/css/main.1fa3dd9f.css",
+    "main.js": "/GreenAPI_production/static/js/main.24e1f9b7.js",
     "static/js/787.e94a1ad6.chunk.js": "/GreenAPI_production/static/js/787.e94a1ad6.chunk.js",
     "static/media/1619162304_11-phonoteka_org-p-fon-vatsap-14.jpg": "/GreenAPI_production/static/media/1619162304_11-phonoteka_org-p-fon-vatsap-14.b21fdfdf6fcfa518c424.jpg",
     "static/media/avatar.jpg": "/GreenAPI_production/static/media/avatar.dc9a2f94bcbb7caa72fb.jpg",
     "index.html": "/GreenAPI_production/index.html",
     "static/media/chat-left-text-fill.svg": "/GreenAPI_production/static/media/chat-left-text-fill.2f7f9d993a55c16b7975807887a70871.svg",
+    "static/media/Cross.svg": "/GreenAPI_production/static/media/Cross.c6d80935b2400abea8d1b8bcbe8d38ee.svg",
     "static/media/person-fill.svg": "/GreenAPI_production/static/media/person-fill.0f597c65f67eac8b83352295b37af1f1.svg",
-    "main.7f40b629.css.map": "/GreenAPI_production/static/css/main.7f40b629.css.map",
-    "main.53c252f6.js.map": "/GreenAPI_production/static/js/main.53c252f6.js.map",
+    "main.1fa3dd9f.css.map": "/GreenAPI_production/static/css/main.1fa3dd9f.css.map",
+    "main.24e1f9b7.js.map": "/GreenAPI_production/static/js/main.24e1f9b7.js.map",
     "787.e94a1ad6.chunk.js.map": "/GreenAPI_production/static/js/787.e94a1ad6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f40b629.css",
-    "static/js/main.53c252f6.js"
+    "static/css/main.1fa3dd9f.css",
+    "static/js/main.24e1f9b7.js"
   ]
 }
